@@ -16,7 +16,7 @@ class AddPlayer extends Component {
 
     onHandleSubmit =(e) =>{
         e.preventDefault()
-        console.log(this.state)
+        this.props.AddPlayers(this.state)
     }
 
     render() {

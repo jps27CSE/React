@@ -16,11 +16,20 @@ class App extends React.Component {
     ]
   }
 
+  AddPlayers = (player) => {
+      player.id = Math.random()
+      let Player = [...this.state.player, player]
+
+      this.setState({ 
+        player : Player
+      })
+  }
+
   render() {
     return (
       <div>
         <MyApp players={this.state.player} />
-        <Player/>
+        <Player AddPlayers={this.AddPlayers} />
       </div>
     );
   }
