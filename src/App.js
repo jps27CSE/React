@@ -2,6 +2,8 @@ import React from 'react';
 
 import MyApp from './FirstApp'
 
+import Player from './AddPlayer'
+
 
 class App extends React.Component {
 
@@ -18,6 +20,7 @@ class App extends React.Component {
     return (
       <div>
         <MyApp players={this.state.player} />
+        <Player/>
       </div>
     );
   }
