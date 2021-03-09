@@ -1,36 +1,24 @@
 import React from 'react';
-
-import MyApp from './FirstApp'
-
-import Player from './AddPlayer'
+import Navbar from './components/Navbar'
+import {BrowserRouter,Route} from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
 
 
 class App extends React.Component {
 
-  state = {
-    player: [
-      { name: 'jack', age: 23, id: '1' },
-      { name: 'ruku', age: 22, id: '2' },
-      { name: 'partho', age: 22, id: '3' },
-      { name: 'pritom', age: 23, id: '4' }
-    ]
-  }
-
-  AddPlayers = (player) => {
-      player.id = Math.random()
-      let Player = [...this.state.player, player]
-
-      this.setState({ 
-        player : Player
-      })
-  }
 
   render() {
     return (
+      <BrowserRouter>
       <div>
-        <MyApp players={this.state.player} />
-        <Player AddPlayers={this.AddPlayers} />
+         <Navbar/>
+         <Route exact path="/" component={Home}/>
+         <Route  path="/about" component={About}/>
+         <Route  path="/contact" component={Contact}/>
       </div>
+      </BrowserRouter>
     );
   }
 
