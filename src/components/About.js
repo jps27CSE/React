@@ -1,4 +1,5 @@
 import React from 'react'
+import Color from '../higher_order_component/Color'
 
 const About = () => {
     return (
@@ -9,4 +10,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Color(About)
